@@ -11,14 +11,13 @@ liname = input('last name ')
 iage = int(input('age '))
 
 
-person = dict(users=[dict(fname=finame, lname=liname, age=iage),])
-
-
-persons = [dict(fname=finame, lname=liname, age=iage),]
-
 if file == 0:
+  person = dict(users=[dict(fname=finame, lname=liname, age=iage),])
   with open('test.yml', 'a') as outfile:
     yaml.dump(person, sort_keys=False, stream=outfile, default_flow_style=False, indent=4)
+
+    
 else:
+  persons = [dict(fname=finame, lname=liname, age=iage),]
   with open('test.yml', 'a') as outfile:
     yaml.dump(persons, sort_keys=False, stream=outfile, default_flow_style=False, indent=4)
